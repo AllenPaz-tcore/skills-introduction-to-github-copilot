@@ -1,12 +1,18 @@
 {
-    // Name this configuration
-    "name": "Introduction to Copilot",
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "GitHub.copilot",
-                "ms-dotnettools.csdevkit"
-            ]
-        }
+  "name": "Introduction to Copilot",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",  // Imagen base con herramientas
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.copilot",
+        "ms-dotnettools.csdevkit"
+      ]
     }
+  },
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y sl",  // Instala sl
+  "features": {
+    "ghcr.io/devcontainers/features/dotnet:1": {
+      "version": "7.0"
+    }
+  }
 }
